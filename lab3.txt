@@ -1,0 +1,174 @@
+BITLAB
+close all
+clear all
+img=imread('cameraman.tif');
+subplot(5,2,1),imshow(img),title('org img');
+istPlan=bitget(img,1);
+subplot(5,2,2),imshow(istPlan),title('ist plan');
+secondPlan=bitget(img,2);
+subplot(5,2,3),imshow(secondPlan),title('2nd plan');
+thirdPlan=bitget(img,3);
+subplot(5,2,4),imshow(thirdPlan),title('3rd plan');
+fourthPlan=bitget(img,4);
+subplot(5,2,5),imshow(fourthPlan),title('4th plan');
+fifthPlan=bitget(img,5);
+subplot(5,2,6),imshow(fifthPlan),title('5th plan');
+siththPlan=bitget(img,6);
+subplot(5,2,7),imshow(sixthPlan),title('6th plan');
+seventhPlan=bitget(img,7);
+subplot(5,2,8),imshow(seventhPlan),title('7th plan');
+eighthPlan=bitget(img,8);
+subplot(5,2,9),imshow(eighthPlan),title('8th plan');
+seventhPlan=bitget(img,9);
+
+
+BITLABCOLOR
+close all
+clear all
+img=imread('flowers.jpg');
+subplot(5,2,1),imshow(img),title('original');
+red=img(:,:,1);
+rbit1=bitget(red,1);
+rbit2=bitget(red,2);
+rbit3=bitget(red,3);
+rbit4=bitget(red,4);
+rbit5=bitget(red,5);
+rbit6=bitget(red,6);
+rbit7=bitget(red,7);
+rbit8=bitget(red,8);
+figure;
+subplot(5,2,1),imshow(red),title('red_org');
+subplot(5,2,2),imshow(logical(rbit1)),title('bit1');
+subplot(5,2,3),imshow(logical(rbit2)),title('bit2');
+subplot(5,2,4),imshow(logical(rbit3)),title('bit3');
+subplot(5,2,5),imshow(logical(rbit4)),title('bit4');
+subplot(5,2,6),imshow(logical(rbit5)),title('bit5');
+subplot(5,2,7),imshow(logical(rbit6)),title('bit6');
+subplot(5,2,8),imshow(logical(rbit7)),title('bit7');
+subplot(5,2,9),imshow(logical(rbit8)),title('bit8');
+
+blue=img(:,:,2);
+bbit1=bitget(blue,1);
+bbit2=bitget(blue,2);
+bbit3=bitget(blue,3);
+bbit4=bitget(blue,4);
+bbit5=bitget(blue,5);
+bbit6=bitget(blue,6);
+bbit7=bitget(blue,7);
+bbit8=bitget(blue,8);
+figure;
+subplot(5,2,1),imshow(blue),title('blue_org');
+subplot(5,2,2),imshow(logical(bbit1)),title('bit1');
+subplot(5,2,3),imshow(logical(bbit2)),title('bit2');
+subplot(5,2,4),imshow(logical(bbit3)),title('bit3');
+subplot(5,2,5),imshow(logical(bbit4)),title('bit4');
+subplot(5,2,6),imshow(logical(bbit5)),title('bit5');
+subplot(5,2,7),imshow(logical(bbit6)),title('bit6');
+subplot(5,2,8),imshow(logical(bbit7)),title('bit7');
+subplot(5,2,9),imshow(logical(bbit8)),title('bit8');
+
+green=img(:,:,3);
+gbit1=bitget(green,1);
+gbit2=bitget(green,2);
+gbit3=bitget(green,3);
+gbit4=bitget(green,4);
+gbit5=bitget(green,5);
+gbit6=bitget(green,6);
+gbit7=bitget(green,7);
+gbit8=bitget(green,8);
+figure;
+subplot(5,2,1),imshow(blue),title('green_org');
+subplot(5,2,2),imshow(logical(gbit1)),title('bit1');
+subplot(5,2,3),imshow(logical(gbit2)),title('bit2');
+subplot(5,2,4),imshow(logical(gbit3)),title('bit3');
+subplot(5,2,5),imshow(logical(gbit4)),title('bit4');
+subplot(5,2,6),imshow(logical(gbit5)),title('bit5');
+subplot(5,2,7),imshow(logical(gbit6)),title('bit6');
+subplot(5,2,8),imshow(logical(gbit7)),title('bit7');
+subplot(5,2,9),imshow(logical(gbit8)),title('bit8');
+
+TASK
+close all
+clear all
+img=imread('cameraman.tif');
+imgbin=de2bi(img);
+imshow(logical(imgbin));
+bit1=[];
+bit2=[];
+bit3=[];
+bit4=[];
+bit5=[];
+bit6=[];
+bit7=[];
+bit8=[];
+for i=1:256
+    for j=1:256
+        bit1(i,j)=imgbin(i*j,1);
+         bit2(i,j)=imgbin(i*j,2);
+          bit3(i,j)=imgbin(i*j,3);
+           bit4(i,j)=imgbin(i*j,4);
+            bit5(i,j)=imgbin(i*j,5);
+             bit6(i,j)=imgbin(i*j,6);
+              bit7(i,j)=imgbin(i*j,7);
+               bit8(i,j)=imgbin(i*j,8);
+    end
+end
+subplot(5,2,1),imshow(img),title('orginal');
+subplot(5,2,2),imshow(logical(bit1)),title('bit1');
+subplot(5,2,3),imshow(logical(bit2)),title('bit2');
+subplot(5,2,4),imshow(logical(bit3)),title('bit3');
+subplot(5,2,5),imshow(logical(bit4)),title('bit4');
+subplot(5,2,6),imshow(logical(bit5)),title('bit5');
+subplot(5,2,7),imshow(logical(bit6)),title('bit6');
+subplot(5,2,8),imshow(logical(bit7)),title('bit7');
+subplot(5,2,9),imshow(logical(bit8)),title('bit8');
+
+AVERAGE FILTER 
+clear all
+close all
+img=imread('cameraman.tif');
+mask1=1/9*ones(3,3);
+mask2=1/25*ones(5,5);
+mask3=1/49*ones(7,7);
+mask4=1/81*ones(9,9);   
+mask5=1/121*ones(11,11);
+mask6=1/169*ones(13,13);
+mask7=1/225*ones(15,15);
+mask8=1/289*ones(17,17);
+mask9=1/361*ones(19,19);
+mask10=1/441*ones(21,21);
+
+
+
+img1=filter2(mask1,img);
+img2=filter2(mask2,img);
+img3=filter2(mask3,img);
+img4=filter2(mask4,img);
+img5=filter2(mask5,img);
+img6=filter2(mask6,img);
+img7=filter2(mask7,img);
+img8=filter2(mask8,img);
+img9=filter2(mask9,img);
+img10=filter2(mask10,img);
+
+img1=uint8(img1);
+img2=uint8(img2);
+img3=uint8(img3);
+img4=uint8(img4);
+img5=uint8(img5);
+img6=uint8(img6);
+img7=uint8(img7);
+img8=uint8(img8);
+img9=uint8(img9);
+img10=uint8(img10);
+
+subplot(4,3,1),imshow(img1),title('filter1');
+subplot(4,3,2),imshow(img2),title('filter2');
+subplot(4,3,3),imshow(img3),title('filter3');
+subplot(4,3,4),imshow(img4),title('filter4');
+subplot(4,3,5),imshow(img5),title('filter5');
+subplot(4,3,6),imshow(img6),title('filter6');
+subplot(4,3,7),imshow(img7),title('filter7');
+subplot(4,3,8),imshow(img8),title('filter8');
+subplot(4,3,9),imshow(img9),title('filter9');
+subplot(4,3,10),imshow(img10),title('filter10');

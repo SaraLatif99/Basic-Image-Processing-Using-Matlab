@@ -1,0 +1,40 @@
+A video file is read in matlab using the command "vision.VideoFileReader"
+The class "ViseoFileReader" contaa=ins a package "vision" using this package it
+reads a video file and returns us an object related to the particular file.
+You can find the properties of the object listed on attached Image.
+We will be given the details of the following properties:
+Filename, PlayCount, AudioOutputPort,ImageColorSpace,VideoOutputDataType.
+So by default if we use this object the  AudioOutptPort will be set to "false"
+meaning no audio samples and color space will be RGB(rgb frames).
+
+This is not all this object contains all the data of the video file, we'll extract that data, for this purpose we'll be using methods, methods are things
+which take object as input and return the particular information we need.
+
+We will be using three methods: info, step , isDone
+ 
+1: info takes object as an input and return more information about object like what is frame rate and what is the size of video.
+2: Step: Every call of the step function will return us the next frame of the video.
+3: isDone is  a method that tells us whether we are done with the video or not whether we have reached at the end of the video or not.If we are at the end of the video
+it returns us a 1 otherwise 0, boolean output.
+
+1: Using Info:
+
+S = info(object)
+
+S = 
+
+  struct with fields:
+
+             Audio: 0
+             Video: 1
+    VideoFrameRate: 25
+         VideoSize: [320 240]
+       VideoFormat: 'YUY2'
+
+2: Using isDone and Step
+
+while ~isDone(object) %this complete will be returning us 1 as long as the video is progressing as isDone will be returning 0 and by negtaing it'll be 1.
+
+
+
+

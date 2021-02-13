@@ -1,0 +1,7 @@
+two commands that will be used for video writing, we will be going to create a copy of the video file by writing it back to the disk
+%VideoWriter, writeVideo
+
+VideoWriter defines a new object so that we can write on that and write Video is used to write video on that object(writeVideo(object,imagedata).
+Before writing an object you must have to have open it and only so you can write it back, for reading you don't have to open it, you can read the contents of it without
+opening.
+Step function takes care of writing frames one by one

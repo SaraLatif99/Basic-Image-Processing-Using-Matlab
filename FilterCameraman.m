@@ -1,0 +1,43 @@
+clc
+close all
+clear all
+img=imread('C:\Users\user\Desktop\MatlabImages\cameraman.tif');
+filterMask1 =1/9 *ones(3,3);
+filterImg1 = filter2(filterMask1,img);
+outfilterImg1 = uint8(filterImg1);
+filterMask2 = 1/25 * ones(5,5);
+filterImg2 = filter2(filterMask2,img);
+outfilterImg1 = uint8(filterImg2);
+filterMask3 = 1/49 * ones(7,7);
+filterImg3 = filter2(filterMask3,img);
+outfilterImg1 = uint8(filterImg3);
+filterMask4 = 1/81 * ones(9,9);
+filterImg4 = filter2(filterMask4,img);
+outfilterImg1 = uint8(filterImg4);
+filterMask5 = 1/121 * ones(11,11);
+filterImg5 = filter2(filterMask5,img);
+filterMask6 = 1/169 * ones(13,13);
+filterImg6 = filter2(filterMask6,img);
+outfilterImg6 = uint8(filterImg6);
+filterMask7 = 1/225 * ones(15,15);
+filterImg7 = filter2(filterMask7,img);
+outfilterImg7 = uint8(filterImg7);
+filterMask8 = 1/289 * ones(17,17);
+filterImg8 = filter2(filterMask8,img);
+outfilterImg8 = uint8(filterImg8);
+filterMask9 = 1/361 * ones(18,18);
+filterImg9 = filter2(filterMask9,img);
+outfilterImg9 = uint8(filterImg9);
+filterMask10 = 1/441 * ones(21,21);
+filterImg10 = filter2(filterMask10,img);
+outfilterImg10 = uint8(filterImg10);
+subplot(4,3,1),imshow(filterImg1),title('filterImg1');
+subplot(4,3,2),imshow(filterImg2),title('filterImg2');
+subplot(4,3,3),imshow(filterImg3),title('filterImg3');
+subplot(4,3,4),imshow(filterImg4),title('filterImg4');
+subplot(4,3,5),imshow(filterImg5),title('filterImg5');
+subplot(4,3,6),imshow(filterImg6),title('filterImg6');
+subplot(4,3,7),imshow(filterImg7),title('filterImg7');
+subplot(4,3,8),imshow(filterImg8),title('filterImg8');
+subplot(4,3,9),imshow(filterImg9),title('filterImg9');
+subplot(4,3,10),imshow(filterImg10),title('filterImg10');
